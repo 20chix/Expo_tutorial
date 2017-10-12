@@ -29,7 +29,7 @@ export default (async function registerForPushNotificationsAsync() {
 
   userID = firebase.auth().currentUser.uid;
 
-  firebase.database().ref('/users/' + userID).set({ token: token });
+  firebase.database().ref('/users/' + userID).update({ token: token });
 
 
 

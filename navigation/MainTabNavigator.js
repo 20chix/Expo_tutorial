@@ -8,6 +8,7 @@ import Colors from '../constants/Colors';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import NotificationsScreen from  '../screens/NotificationsScreen';
 
 export default TabNavigator(
   {
@@ -19,6 +20,9 @@ export default TabNavigator(
     },
     Settings: {
       screen: SettingsScreen,
+    },
+    Notifications: {
+      screen: NotificationsScreen,
     },
   },
   {
@@ -41,6 +45,11 @@ export default TabNavigator(
             iconName = Platform.OS === 'ios'
               ? `ios-options${focused ? '' : '-outline'}`
               : 'md-options';
+              break;
+          case 'Notifications':
+            iconName = Platform.OS === 'ios'
+                ? `ios-notifications${focused ? '' : '-outline'}`
+                : 'md-notifications';
         }
         return (
           <Ionicons
